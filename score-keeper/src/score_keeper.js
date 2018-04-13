@@ -14,13 +14,18 @@ class Players extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      players: [{ value: 0 }]
+      players: [{ value: 0 }, { value: 0 }]
     };
   }
   render() {
+    var playerList = []
+    for (var i = 0; i < this.state.players.length; i++) {
+      playerList.push(this.renderPlayer(i));
+    }
+
     return (
       <div className="players">
-        {this.renderPlayer(0)}
+        {playerList}
       </div>
     )
   }
@@ -34,6 +39,8 @@ class Players extends Component {
   handleClick(i) {
     const players = this.state.players.slice();
     players[i].value += 1;
+    this.setState = { players: players }; //always set sat, never assign to this.state
+    this.forceUpdate(); //this probably can be improved...
   }
 }
 
