@@ -14,34 +14,37 @@ class Players extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      players: Array(3).fill(null)
+      players: [{ value: 0 }]
     };
   }
   render() {
     return (
       <div className="players">
-        {this.renderPlayer(1)}
+        {this.renderPlayer(0)}
       </div>
     )
   }
 
   renderPlayer(i) {
     return (
-      <Player value={i} onClick={this.handleClick} />
+      <Player value={this.state.players[i].value} onClick={() => this.handleClick(i)} />
     )
   }
 
-  handleClick() {
-    alert("click");
+  handleClick(i) {
+    const players = this.state.players.slice();
+    players[i].value += 1;
   }
 }
 
-function Player(props) {
-  return (
-    <button className="player" onClick={props.onClick}>
-      {props.value}
-    </button>
-  );
+class Player extends Component {
+  render() {
+    return (
+      <button className="player" onClick={() => this.props.onClick()} >
+        {this.props.value}
+      </button>
+    )
+  }
 }
 
 
