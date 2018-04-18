@@ -1,5 +1,7 @@
 /node_modules
 /my-app
+sk.code-workspace
+.log
 
 # Windows image file caches
 Thumbs.db
