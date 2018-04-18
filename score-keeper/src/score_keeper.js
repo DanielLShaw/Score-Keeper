@@ -14,7 +14,7 @@ class Players extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      players: [{ value: 0 }, { value: 0 }]
+      players: [{ value: 9 }, { value: 99 }, { value: 999 }, { value: 9999 }, { value: 99999 }]
     };
   }
   render() {

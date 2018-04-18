@@ -1,7 +1,22 @@
 button.player {
+  width: 3em;
+  height:3em;
   border: 0;
   font-size: 3em;
-  padding: 1em;
   margin: 1%;
-  width: 3em;
+  border-radius: 100%;
+  outline: none;
+  background-color: #502358;
+  color:white;
+}
+
+button.player:hover{
+  animation-name:ripple;
+  animation-duration: 1s;
+}
+
+@keyframes ripple{
+  0% {opacity: 1}
+  50% {opacity: 0.5}
+  100% {opacity: 1}
 }
