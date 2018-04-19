@@ -14,9 +14,9 @@ class Players extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      players: [{ value: 9 }, { value: 99 }, { value: 999 }, { value: 9999 }, { value: 99999 }],
+      players: [{ value: 9, reverse: true }, { value: 99, reverse: false }, { value: 999, reverse: true }, { value: 9999, reverse: false }, { value: 99999, reverse: true }],
       increment: 1,
-      buttonPressTimer: 0,
+      buttonPressTimer: null,
       reverseModeWait: 1000
     };
     this.reverseMode = this.reverseMode.bind(this);
@@ -38,20 +38,20 @@ class Players extends Component {
 
   renderPlayer(i) {
     return (
-      <Player key={i.toString()} value={this.state.players[i].value} onClick={() => this.handleClick(i)} onmousedown={() => this.handleMouseDown()} onmouseup={() => this.handleMouseUp()} />
+      <Player key={i} data-id={i} class={(this.state.players[i].reverse ? 'player invert' : 'player')} value={this.state.players[i].value} onClick={() => this.handleClick(i)} onmousedown={() => this.handleMouseDown(i)} onmouseup={() => this.handleMouseUp()} />
     )
   }
 
   handleClick(i) {
     const state = this.state;
     state.players.slice()[i].value += this.state.increment;
-    this.setState(state);; //always set sat, never assign to this.state
-    this.forceUpdate(); //this probably can be improved...
+    this.setState(state); //always set sat, never assign to this.state
   }
 
-  handleMouseDown() {
+  handleMouseDown(i) {
     const state = this.state;
-    state.buttonPressTimer = setTimeout(this.reverseMode, this.state.reverseModeWait);
+    console.log(this.state.reverseModeWait)
+    state.buttonPressTimer = setTimeout(function () { this.reverseMode(i) }.bind(this), this.state.reverseModeWait);
     this.setState(state);
   }
 
@@ -62,9 +62,10 @@ class Players extends Component {
     this.setState(state);
   }
 
-  reverseMode() {
+  reverseMode(i) {
     const state = this.state;
     state.increment *= -1;
+    state.players[i].reverse = !state.players[i].reverse;
     this.setState(state);
   }
 
@@ -73,7 +74,7 @@ class Players extends Component {
 class Player extends Component {
   render() {
     return (
-      <button className="player" onClick={() => this.props.onClick()} onMouseDown={() => this.props.onmousedown()} onMouseUp={() => this.props.onmouseup()}>
+      <button id={this.props["data-id"]} className={this.props.class} onClick={() => this.props.onClick()} onMouseDown={() => this.props.onmousedown()} onMouseUp={() => this.props.onmouseup()}>
         {this.props.value}
       </ button>
     )
