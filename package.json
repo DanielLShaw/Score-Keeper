@@ -2,14 +2,18 @@
   "name": "score-kpr",
   "version": "1.0.0",
   "description": "A score keeping app",
-  "main": "index.js",
   "dependencies": {
     "jshint": "^2.9.5",
-    "react-scripts": "1.1.4"
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-scripts": "0.9.5"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
