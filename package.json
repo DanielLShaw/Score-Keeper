@@ -1,0 +1,23 @@
+{
+  "name": "score-kpr",
+  "version": "1.0.0",
+  "description": "A score keeping app",
+  "main": "index.js",
+  "dependencies": {
+    "jshint": "^2.9.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielLShaw/Score-Keeper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielLShaw/Score-Keeper/issues"
+  },
+  "homepage": "https://github.com/DanielLShaw/Score-Keeper#readme"
+}
