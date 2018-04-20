@@ -1,5 +1,5 @@
 {
-    "root": "score-kpr/",
+    "root": "build/",
     "https_only": true,
     "headers": {
         "/**": {
