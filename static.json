@@ -1,3 +1,6 @@
 {
-    "root": "score-kpr/"
+    "root": "score-kpr/",
+    "routes": {
+        "/**": "index.html"
+    }
 }
