@@ -9,18 +9,16 @@ button.player {
   background-color: #502358;
   color:white;
 }
-
-button.player:hover{
-  animation-name:ripple;
-  animation-duration: 1s;
-}
-
 button.player.invert{
   filter:invert(100%);
+}
+/* button.player:hover{
+  animation-name:ripple;
+  animation-duration: 1s;
 }
 
 @keyframes ripple{
   0% {opacity: 1}
   50% {opacity: 0.5}
   100% {opacity: 1}
-}
+} */

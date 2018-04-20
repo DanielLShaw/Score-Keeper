@@ -14,7 +14,7 @@ class Players extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      players: [{ value: 9, reverse: true }, { value: 99, reverse: false }, { value: 999, reverse: true }, { value: 9999, reverse: false }, { value: 99999, reverse: true }],
+      players: [{ value: 0, reverse: false }, { value: 0, reverse: false }, { value: 0, reverse: false }],
       increment: 1,
       buttonPressTimer: null,
       reverseModeWait: 1000
@@ -38,13 +38,14 @@ class Players extends Component {
 
   renderPlayer(i) {
     return (
-      <Player key={i} data-id={i} class={(this.state.players[i].reverse ? 'player invert' : 'player')} value={this.state.players[i].value} onClick={() => this.handleClick(i)} onmousedown={() => this.handleMouseDown(i)} onmouseup={() => this.handleMouseUp()} />
+      <Player key={i} data-id={i} class={(this.state.players[i].reverse ? 'player invert' : 'player')} value={this.state.players[i].value} onClick={() => this.handleClick(i)} onmousedown={() => this.handleMouseDown(i)} onmouseup={() => this.handleMouseUp()} touchstart={() => this.handleMouseDown(i)} touchend={() => this.handleMouseUp()} />
     )
   }
 
   handleClick(i) {
     const state = this.state;
-    state.players.slice()[i].value += this.state.increment;
+    const sign = state.players[i].reverse ? -1 : 1
+    state.players[i].value += this.state.increment * sign;
     this.setState(state); //always set sat, never assign to this.state
   }
 
@@ -64,7 +65,6 @@ class Players extends Component {
 
   reverseMode(i) {
     const state = this.state;
-    state.increment *= -1;
     state.players[i].reverse = !state.players[i].reverse;
     this.setState(state);
   }
@@ -74,7 +74,7 @@ class Players extends Component {
 class Player extends Component {
   render() {
     return (
-      <button id={this.props["data-id"]} className={this.props.class} onClick={() => this.props.onClick()} onMouseDown={() => this.props.onmousedown()} onMouseUp={() => this.props.onmouseup()}>
+      <button id={this.props["data-id"]} className={this.props.class} onClick={() => this.props.onClick()} onMouseDown={() => this.props.onmousedown()} onMouseUp={() => this.props.onmouseup()} onTouchStart={() => this.props.onmousedown()} onTouchEnd={() => this.props.onmouseup()}>
         {this.props.value}
       </ button>
     )
