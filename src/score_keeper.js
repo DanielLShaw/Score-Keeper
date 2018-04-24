@@ -38,7 +38,7 @@ class Players extends Component {
 
   renderPlayer(i) {
     return (
-      <Player key={i} data-id={i} class={(this.state.players[i].reverse ? 'player invert' : 'player')} value={this.state.players[i].value} onClick={() => this.handleClick(i)} onmousedown={() => this.handleMouseDown(i)} onmouseup={() => this.handleMouseUp()} touchstart={() => this.handleMouseDown(i)} touchend={() => this.handleMouseUp()} />
+      <Player key={i} data-id={i} class={(this.state.players[i].reverse ? 'player invert noselect' : 'player noselect')} value={this.state.players[i].value} onClick={() => this.handleClick(i)} onmousedown={() => this.handleMouseDown(i)} onmouseup={() => this.handleMouseUp()} touchstart={() => this.handleMouseDown(i)} touchend={() => this.handleMouseUp()} />
     )
   }
 
