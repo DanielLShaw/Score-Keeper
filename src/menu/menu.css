@@ -1,10 +1,11 @@
-button.addPlayer{
-    width: 3em;
-    border: 0;
+button.addPlayer,
+button.editPlayers {
+  width: 3em;
+  border: 0;
   font-size: 3em;
   margin: 1%;
   border-radius: 5px;
   outline: none;
   color: #502358;
-  background-color:white;
+  background-color: white;
 }

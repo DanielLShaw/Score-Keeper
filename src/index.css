@@ -7,8 +7,23 @@ body {
   color:white;
 }
 
+header,main{
+  display: inline-block;
+  width: 100%;
+}
+
 footer{
-  color:#3e4767;
+  position: fixed;
+  top: auto;
+  bottom: 0;
+  width: 100%;
+  background-color: #3e4767;
+}
+
+
+
+a.github{
+  color:white;
 }
 
 .noselect{

@@ -9,8 +9,11 @@ class Menu extends Component {
     render() {
         return (
             <div className="menu">
-                <button className="addPlayer" onClick={() => this.props.addPlayer()}><i className="fas fa-user-plus"></i>
-
+                <button className="addPlayer" onClick={() => this.props.addPlayer()}>
+                    <i className="fas fa-user-plus" role="button" aria-label="Add Player" />
+                </button>
+                <button className="editPlayers" onClick={() => this.props.editPlayers()}>
+                    <i className="fas fa-user-edit" role="button" aria-label="Edit Players" />
                 </button>
             </div>
         )

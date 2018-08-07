@@ -1,14 +1,19 @@
 button.player {
   width: 3em;
-  height:3em;
+  height: 3em;
   border: 0;
   font-size: 3em;
-  margin: 1%;
   border-radius: 100%;
   outline: none;
   background-color: #502358;
-  color:white;
+  color: white;
 }
-button.player.invert{
-  filter:invert(100%);
+
+button.player.invert {
+  filter: invert(100%);
+}
+
+div.player {
+  display: inline-block;
+  margin: 1%;
 }

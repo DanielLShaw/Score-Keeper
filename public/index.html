@@ -3,20 +3,31 @@
 
 <head>
   <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-MPBTS8X');</script>
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-MPBTS8X');
+  </script>
   <!-- End Google Tag Manager -->
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117967970-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
 
     gtag('config', 'UA-117967970-1');
@@ -26,10 +37,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
   <title>Score Keeper</title>
-  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
-    crossorigin="anonymous"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
-    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+
+
 
 </head>
 
@@ -42,18 +53,19 @@
   <header>
     <h1>Score Keeper</h1>
   </header>
-
-  <div id="root"></div>
-  <div id="instructions">
-    <p>Hi! Thanks for stumbling upon my little score keeping app!</p>
-    <p>Tap on the add player button to get started</p>
-    <p>Tap on the player circles to increase their numbers</p>
-    <p>Long press on the player circle to activate negative mode, which will subtract on tap</p>
-    <p>Long press again to revert to postive mode.</p>
-  </div>
+  <main>
+    <div id="root"></div>
+    <div id="instructions">
+      <p>Hi! Thanks for stumbling upon my little score keeping app!</p>
+      <p>Tap on the add player button to get started</p>
+      <p>Tap on the player circles to increase their numbers</p>
+      <p>Long press on the player circle to activate negative mode, which will subtract on tap</p>
+      <p>Long press again to revert to postive mode.</p>
+    </div>
+  </main>
   <footer>
     <span>Dan Shaw 2018</span>
-    <a href="https://github.com/DanielLShaw/Score-Keeper" target="_blank">
+    <a class="github" href="https://github.com/DanielLShaw/Score-Keeper" target="_blank" aria-label="DanielLShaw Github Repository">
       <i class="fab fa-github"></i>
     </a>
   </footer>
