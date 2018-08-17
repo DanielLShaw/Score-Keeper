@@ -1,11 +1,29 @@
-button.addPlayer,
-button.editPlayers {
+button.add-player,
+button.edit-player {
   width: 3em;
   border: 0;
   font-size: 3em;
   margin: 1%;
   border-radius: 5px;
   outline: none;
-  color: #502358;
-  background-color: white;
+  color: #9a5703;
+  background-color: transparent;
+  border: 2px #9a5703 solid;
+}
+
+button.disabled,
+form.disabled {
+  display: none;
+}
+
+button.enabled,
+form.enabled {
+  display: inline-block;
+}
+
+.editor label,
+.editor input {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
 }

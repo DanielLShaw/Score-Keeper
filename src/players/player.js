@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import EditForm from '../editor/editor.js';
 
 class Player extends Component {
     constructor(props) {
@@ -24,10 +25,10 @@ class Player extends Component {
                     {this.props.value}
                 </button>
                 <p>{this.props.name}</p>
+                <EditForm editMode={this.props.editMode} player={this.props.player} playerId={this.props.id} handleEditChange={this.props.handleEditChange} />
             </div >
         )
     }
-
 }
 
 export default Player;
