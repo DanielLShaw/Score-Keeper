@@ -12,7 +12,7 @@ button.edit-player {
 }
 
 button.disabled,
-form.disabled {
+div.disabled {
   display: none;
 }
 
