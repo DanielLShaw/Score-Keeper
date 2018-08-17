@@ -10,7 +10,7 @@ button.player {
 }
 
 button.player.invert {
-  filter: invert(100%);
+  border: 0.5em solid white;
 }
 
 div.player {

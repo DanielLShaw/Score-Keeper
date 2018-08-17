@@ -3,40 +3,50 @@ body {
   padding: 0;
   font-family: sans-serif;
   text-align: center;
-  background-color:#171717;
-  color:white;
+  background-color: #171717;
+  color: #9a5703;
 }
 
-header,main{
+header,
+main {
   display: inline-block;
   width: 100%;
 }
 
-footer{
+footer {
   position: fixed;
   top: auto;
   bottom: 0;
   width: 100%;
-  background-color: #3e4767;
+  background-color: #9a5703;
+  color: white;
 }
 
-
-
-a.github{
-  color:white;
+a.github {
+  color: white;
 }
 
-.noselect{
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-   -khtml-user-select: none; /* Konqueror HTML */
-     -moz-user-select: none; /* Firefox */
-      -ms-user-select: none; /* Internet Explorer/Edge */
-          user-select: none; /* Non-prefixed version, currently
+button {
+  cursor: pointer;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
                                 supported by Chrome and Opera */
 }
 
-i,svg{
-  pointer-events:none;
+i,
+svg {
+  pointer-events: none;
 }
-
